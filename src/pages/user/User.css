@@ -1,0 +1,54 @@
+.user-index-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.user-index-container form {
+  background-color: white;
+  width: 400px;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  text-align: center;
+}
+
+.user-index-container h1 {
+  font-size: 36px;
+  color: #444;
+}
+.user-index-container h3 {
+  font-size: 24px;
+  color: #555;
+}
+.user-index-container input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+}
+
+.user-index-container input:focus {
+  outline: none;
+  background-color: #f9f9f9;
+}
+
+.user-index-container button {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.user-index-container button:hover {
+  background-color: #777;
+  color: white;
+}
+
+.user-index-container .verify-error {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #d94f4f;
+  padding: 8px 12px;
+}

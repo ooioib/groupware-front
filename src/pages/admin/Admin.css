@@ -1,0 +1,68 @@
+/* 전체 레이아웃 */
+.admin-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* 좌측 사이드 네비게이션 */
+.admin-side-nav {
+  width: 240px;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+}
+
+.admin-side-nav h2 {
+  font-size: 1.5em;
+}
+
+.admin-side-nav h2 > a {
+  text-decoration: none;
+  color: #444;
+}
+
+.admin-side-nav h2 > a:hover {
+  color: #111;
+}
+
+.admin-side-nav li > a {
+  text-decoration: none;
+  color: #777;
+}
+
+.admin-side-nav li > a:hover {
+  color: #444;
+}
+
+.admin-side-nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.admin-side-nav li {
+  margin-bottom: 10px;
+}
+
+/* 메인 컨텐츠 */
+.admin-main {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+/* 사원 테이블 */
+.admin-employee-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-employee-table th,
+.admin-employee-table td {
+  border: 1px solid #777;
+  padding: 10px;
+  text-align: center;
+}
+
+.admin-employee-table thead {
+  background-color: #f5f5f5;
+}

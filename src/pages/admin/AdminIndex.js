@@ -1,21 +1,12 @@
-import { Link } from "react-router";
-import "./AdminIndex.css";
+// 라우팅을 위한 Link 컴포넌트 불러오기
+import "./Admin.css";
+import AdminNavigator from "../../components/AdminNavigator";
 
 function AdminIndexPage() {
   return (
     <>
       <div className="admin-container">
-        <div class="admin-side-nav">
-          <h2>관리자메뉴</h2>
-          <ul>
-            <li>
-              <Link to="/admin/employees/add">사원등록</Link>
-            </li>
-            <li>
-              <Link to="/admin/employees/manage">사원관리</Link>
-            </li>
-          </ul>
-        </div>
+        <AdminNavigator />
 
         <div class="admin-main">
           <h1>관리자 대시보드</h1>
@@ -27,6 +18,7 @@ function AdminIndexPage() {
 }
 
 export default AdminIndexPage;
+
 /*
-    ctrl + shift + l : Select all occurrences of current selection
+  ctrl + shift + l : 현재 선택한 모든 항목 한꺼번에 수정
 */
