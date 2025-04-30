@@ -52,3 +52,36 @@
   color: #d94f4f;
   padding: 8px 12px;
 }
+
+/* relatated user workspace css*/
+.user-workspace {
+  height: 100vh;
+}
+.user-workspace-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  padding: 0px 10px;
+  border-bottom: 1px solid #d8d6d6;
+}
+
+.user-workspace-header.info {
+  display: flex;
+  gap: 10px;
+  color: #444;
+}
+
+.user-workspace-main {
+  display: flex;
+  height: calc(100vh - 76px);
+}
+.user-workspace-side {
+  padding: 20px;
+  width: 250px;
+  border-right: 1px solid #d8d6d6;
+}
+.user-workspace-content {
+  flex-grow: 1;
+  padding: 20px;
+}
