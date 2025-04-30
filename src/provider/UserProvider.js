@@ -4,9 +4,12 @@ const UserContext = createContext();
 
 export function UserProvider({ children }) {
   const [user, setUser] = useState({});
+  const [token, setToken] = useState("");
   const providerValue = {
     user,
     setUser,
+    token,
+    setToken,
   };
 
   return (
