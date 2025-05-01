@@ -1,6 +1,9 @@
 import "./App.css";
 
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router";
+import { useState } from "react";
+import { UserProvider } from "./provider/UserProvider";
+
 // 각 페이지 컴포넌트 불러오기
 import AdminIndexPage from "./pages/admin/AdminIndex";
 import AdminAddEmployeePage from "./pages/admin/AdminAddEmployee";
@@ -8,9 +11,8 @@ import AdminManageEmployeePage from "./pages/admin/AdminManageEmployee";
 import UserIndexPage from "./pages/user/UserIndex";
 import UserWorkspacePage from "./pages/user/UserWorkspace";
 import UserChangePasswordPage from "./pages/user/UserChangePassword";
-
-import { useState } from "react";
-import { UserProvider } from "./provider/UserProvider";
+import UserWorkspaceLayout from "./pages/user/UserLayout";
+import UserBoardPage from "./pages/user/UserBoardPage";
 
 function App() {
   const [user] = useState(null);
@@ -27,12 +29,20 @@ function App() {
     },
     {
       path: "/user/workspace",
-      element: <UserWorkspacePage />,
+      element: <UserWorkspaceLayout />,
+      children: [
+        { path: "/user/workspace", element: <UserWorkspacePage /> },
+        {
+          path: "/user/workspace/setting/password",
+          element: <UserChangePasswordPage />,
+        },
+        {
+          path: "/user/workspace/board",
+          element: <UserBoardPage />,
+        },
+      ],
     },
-    {
-      path: "/user/workspace/setting/password",
-      element: <UserChangePasswordPage />,
-    },
+
     {
       path: "/admin/index",
       element: <AdminIndexPage />,

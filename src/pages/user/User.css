@@ -65,8 +65,7 @@
   padding: 0px 10px;
   border-bottom: 1px solid #d8d6d6;
 }
-
-.user-workspace-header.info {
+.user-workspace-header .info {
   display: flex;
   gap: 10px;
   color: #444;
@@ -84,4 +83,87 @@
 .user-workspace-content {
   flex-grow: 1;
   padding: 20px;
+  color: #444;
+}
+
+.user-workspace-content h2,
+h3 {
+  font-weight: normal;
+  margin: 8px 0px;
+}
+
+.user-workspace-content ul {
+  list-style: none;
+  padding: 0px;
+  font-size: 0.9em;
+}
+
+/*-- 게시판 --*/
+.user-board h2 {
+  font-size: 1.5rem;
+  color: #222;
+  font-weight: 600;
+}
+.user-board p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.user-board table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.user-board thead tr {
+  background-color: #f5f5f5;
+  text-align: left;
+}
+.user-board tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+.user-board tbody tr:hover {
+  cursor: pointer;
+  background-color: #fcfcfc;
+}
+
+.user-board th,
+.user-board td {
+  padding: 8px;
+}
+
+/* 글쓰기 화면 */
+.user-board .write-form {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.user-board .write-form div {
+  margin-bottom: 10px;
+}
+
+.user-board .write-form label {
+  display: block;
+  font-weight: 600;
+}
+
+.user-board .write-form input,
+.user-board .write-form textarea {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 1rem;
+  resize: none;
+}
+.user-board .write-form input:focus,
+.user-board .write-form textarea:focus {
+  outline: none;
 }
