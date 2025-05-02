@@ -12,9 +12,9 @@ function UserWorkspaceLayout() {
         <div className="info">
           {user && (
             <>
-              <span>{user.id}</span> | <span>{user.name}</span> |{" "}
+              <span>{user.id}</span>/<span>{user.name}</span>/
               <span>
-                {user.department.name} {user.position}
+                ({user.department.name} {user.position})
               </span>
             </>
           )}
@@ -22,9 +22,15 @@ function UserWorkspaceLayout() {
       </div>
       <div className="user-workspace-main">
         <div className="user-workspace-side">
-          <Link to="/user/workspace/board">게시판</Link>
+          <ul>
+            <li>
+              <Link to="/user/workspace/board">게시판</Link>
+            </li>
+            <li>
+              <Link to="/user/workspace/board/write">글쓰기</Link>
+            </li>
+          </ul>
         </div>
-
         <div className="user-workspace-content">
           <Outlet />
         </div>

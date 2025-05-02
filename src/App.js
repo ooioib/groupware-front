@@ -12,10 +12,12 @@ import UserIndexPage from "./pages/user/UserIndex";
 import UserWorkspacePage from "./pages/user/UserWorkspace";
 import UserChangePasswordPage from "./pages/user/UserChangePassword";
 import UserWorkspaceLayout from "./pages/user/UserLayout";
-import UserBoardPage from "./pages/user/UserBoardPage";
+import UserBoardPage from "./pages/user/UserBoard";
+import UserBoardWritePage from "./pages/user/UserBoardWrite";
+import UserBoardViewPage from "./pages/user/UserBoardView";
 
 function App() {
-  const [user] = useState(null);
+  const [user, setUser] = useState(null);
   console.log(user);
 
   const router = createBrowserRouter([
@@ -40,9 +42,16 @@ function App() {
           path: "/user/workspace/board",
           element: <UserBoardPage />,
         },
+        {
+          path: "/user/workspace/board/:id",
+          element: <UserBoardViewPage />,
+        },
+        {
+          path: "/user/workspace/board/write",
+          element: <UserBoardWritePage />,
+        },
       ],
     },
-
     {
       path: "/admin/index",
       element: <AdminIndexPage />,

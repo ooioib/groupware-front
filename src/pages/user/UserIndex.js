@@ -32,7 +32,7 @@ function UserIndexPage() {
       .then(function (data) {
         setError(null);
         setUser(data.employee);
-        setToken(Date.token);
+        setToken(data.token);
         console.log(data);
         navigate("/user/workspace");
       })
