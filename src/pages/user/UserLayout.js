@@ -30,6 +30,18 @@ function UserWorkspaceLayout() {
               <Link to="/user/workspace/board/write">글쓰기</Link>
             </li>
           </ul>
+
+          <ul>
+            <li>
+              <Link to="/user/workspace/note/sender">쪽지 쓰기</Link>
+            </li>
+            <li>
+              <Link to="/user/workspace/note/inbox">받은 쪽지함</Link>
+            </li>
+            <li>
+              <Link to="/user/workspace/note/outbox">보낸 쪽지함</Link>
+            </li>
+          </ul>
         </div>
         <div className="user-workspace-content">
           <Outlet />
