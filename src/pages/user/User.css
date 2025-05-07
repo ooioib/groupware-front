@@ -238,3 +238,11 @@ h3 {
 .user-note-sender textarea:focus {
   outline: #ccc;
 }
+
+.user-note .content-preview {
+  display: inline-block;
+  max-width: 300px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
