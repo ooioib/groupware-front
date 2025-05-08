@@ -67,6 +67,7 @@
 }
 .user-workspace-header .info {
   display: flex;
+  align-items: center;
   gap: 10px;
   color: #444;
 }
@@ -97,6 +98,27 @@ h3 {
   list-style: none;
   padding: 0px;
   font-size: 0.9em;
+}
+
+.alarm-popup {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #222;
+  top: 50px;
+  right: 100px;
+  width: 250px;
+  display: none;
+  text-wrap: wrap;
+  padding: 10px;
+}
+
+.alarm-icon:hover {
+  font-size: 1.3em;
+}
+
+.alarm-popup ul {
+  padding: 0;
+  list-style: none;
 }
 
 /*-- 게시판 --*/
@@ -169,7 +191,10 @@ h3 {
   outline: none;
 }
 
-/* 쪽지함 관련 */
+/*
+  쪽지함 관련
+*/
+
 .user-note table {
   width: 100%;
   border-collapse: collapse;
@@ -245,4 +270,12 @@ h3 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.chat-container .message {
+  width: 100%;
+  height: 75px;
+  resize: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 8px;
 }

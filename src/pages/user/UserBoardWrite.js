@@ -22,8 +22,10 @@ function UserBoardWritePage() {
       },
       body: JSON.stringify(data),
     });
+
     const json = await response.json();
     console.log(json);
+
     navigate("/user/workspace/board");
   };
 

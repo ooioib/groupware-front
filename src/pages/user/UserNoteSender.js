@@ -33,7 +33,7 @@ function UserNoteSenderPage() {
 
   return (
     <div className="user-note">
-      <h2>사원 대시보드 &gt; 쪽지 &gt; 쪽지쓰기</h2>
+      <h2>사원 대시보드 &gt; 쪽지 &gt; 쪽지 쓰기</h2>
       <p>
         받는 사람은 쉼표(,) 또는 세미콜론(;)으로 구분하여 여러 명을 지정할 수
         있습니다.

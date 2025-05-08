@@ -19,6 +19,7 @@ import UserNoteOutBoxPage from "./pages/user/UserNoteOutBox";
 import UserNoteInBoxPage from "./pages/user/UserNoteInBox";
 import UserNoteSenderPage from "./pages/user/UserNoteSender";
 import UserNoteViewerPage from "./pages/user/UserNoteViewer";
+import UserChatPage from "./pages/user/UserChatPage";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -70,6 +71,10 @@ function App() {
         {
           path: "/user/workspace/note/viewer/:id",
           element: <UserNoteViewerPage />,
+        },
+        {
+          path: "/user/workspace/chat/:departmentId",
+          element: <UserChatPage />,
         },
       ],
     },

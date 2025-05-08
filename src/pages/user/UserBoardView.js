@@ -1,4 +1,6 @@
+// React의 기본 훅과 라우팅 도구 import
 import { useEffect, useState } from "react";
+// URL 파라미터(id)를 가져오기 위해 사용
 import { useParams } from "react-router";
 import { useUserContext } from "../../provider/UserProvider";
 
