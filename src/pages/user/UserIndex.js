@@ -33,7 +33,12 @@ function UserIndexPage() {
         setError(null);
         setUser(data.employee);
         setToken(data.token);
+
+        sessionStorage.setItem("token", data.token);
+        sessionStorage.setItem("user", JSON.stringify(data.employee));
+
         console.log(data);
+
         navigate("/user/workspace");
       })
       .catch(function (error) {

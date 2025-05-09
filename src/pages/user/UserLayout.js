@@ -1,11 +1,12 @@
-import { Link, Outlet } from "react-router";
+import { Link, Outlet, useNavigate } from "react-router";
 import { useUserContext } from "../../provider/UserProvider";
 import { useEffect, useState } from "react";
 import { Client } from "@stomp/stompjs";
 
 function UserWorkspaceLayout() {
   const [alarm, setAlarm] = useState([]);
-  const { user, setStompClient } = useUserContext();
+  const { user, setStompClient, setUser, setToken } = useUserContext();
+  const navigate = useNavigate();
 
   const webSoketInitialize = function () {
     const client = new Client({
@@ -37,7 +38,11 @@ function UserWorkspaceLayout() {
   };
 
   useEffect(() => {
-    webSoketInitialize();
+    if (!user) {
+      return navigate("/user/index");
+    } else {
+      webSoketInitialize();
+    }
   }, []);
 
   const openPopup = function () {
@@ -50,6 +55,17 @@ function UserWorkspaceLayout() {
       document.getElementById("alarm").style.display = "none";
       setAlarm([]);
     }
+  };
+
+  const logoutHandle = async function (evt) {
+    evt.preventDefault();
+
+    setUser(null);
+    setToken(null);
+
+    sessionStorage.clear();
+
+    navigate("/user/index");
   };
 
   return (
@@ -109,9 +125,14 @@ function UserWorkspaceLayout() {
           </ul>
           <ul>
             <li>
-              <Link to={"/user/workspace/chat/" + user.department.id}>
+              <Link to={"/user/workspace/chat/" + user?.department.id}>
                 부서 채팅방
               </Link>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Link onClick={logoutHandle}>로그아웃</Link>
             </li>
           </ul>
         </div>

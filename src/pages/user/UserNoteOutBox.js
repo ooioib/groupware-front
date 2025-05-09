@@ -23,9 +23,7 @@ function UserNoteOutBoxPage() {
   return (
     <div className="user-note">
       <h2>사원 대시보드 &gt; 쪽지 &gt; 보낸 쪽지함</h2>
-      <div className="user-note-menu">
-        <button>삭제</button>
-      </div>
+      <div className="user-note-menu"></div>
       <table>
         <thead>
           <tr>
@@ -54,6 +52,9 @@ function UserNoteOutBoxPage() {
           })}
         </tbody>
       </table>
+      <div className="user-note-delete-button">
+        <button>삭제</button>
+      </div>
     </div>
   );
 }

@@ -3,8 +3,22 @@ import { createContext, useContext, useState } from "react";
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
-  const [user, setUser] = useState({});
-  const [token, setToken] = useState("");
+  const [user, setUser] = useState(() => {
+    if (sessionStorage.getItem("user")) {
+      return JSON.parse(sessionStorage.getItem("user"));
+    } else {
+      return null;
+    }
+  });
+
+  const [token, setToken] = useState(() => {
+    if (sessionStorage.getItem("token")) {
+      return sessionStorage.getItem("token");
+    } else {
+      return null;
+    }
+  });
+
   const [stompClient, setStompClient] = useState(null);
 
   const providerValue = {
