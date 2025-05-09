@@ -5,30 +5,40 @@ import { Client } from "@stomp/stompjs";
 
 function UserWorkspaceLayout() {
   const [alarm, setAlarm] = useState([]);
+  const { user, setStompClient } = useUserContext();
 
   const webSoketInitialize = function () {
     const client = new Client({
       brokerURL: "ws://192.168.10.97:9090/handshake",
       onConnect: function () {
         console.log("connected");
+
         client.subscribe("/public", function (message) {
           // console.log(message);
-          // console.log(message.body + " form public");
+          // console.log(message.body + " form notice");
           setAlarm((oldAlarm) => {
             return [...oldAlarm, message.body];
           });
         });
 
         client.subscribe("/private/" + user.id, function (message) {
+          // console.log(message);
+          // console.log(message.body + " form notice");
           setAlarm((oldAlarm) => {
             return [...oldAlarm, message.body];
           });
         });
+
+        setStompClient(client);
       },
     });
 
     client.activate();
   };
+
+  useEffect(() => {
+    webSoketInitialize();
+  }, []);
 
   const openPopup = function () {
     if (
@@ -42,18 +52,13 @@ function UserWorkspaceLayout() {
     }
   };
 
-  useEffect(() => {
-    webSoketInitialize();
-  }, []);
-
-  const { user } = useUserContext();
-
   return (
     <div className="user-workspace">
       <div className="user-workspace-header">
         <h2>
           <Link to="/user/workspace">GROUPWARE</Link>
         </h2>
+
         <div className="info">
           {user && (
             <>
